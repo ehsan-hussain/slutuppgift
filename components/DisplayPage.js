@@ -151,5 +151,5 @@ const DisplayPage = ({ navigation }) => {
       />
     </View>
   );
-}
+
 export default DisplayPage; 
