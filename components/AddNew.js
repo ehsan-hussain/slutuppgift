@@ -18,7 +18,7 @@ const AddNew = ({ navigation }) => {
     };
 
     try {
-      const response = await fetch('http://192.168.1.93:3000/cars', {
+      const response = await fetch('http://localhost:3000/cars', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
