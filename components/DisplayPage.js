@@ -126,3 +126,30 @@ const DisplayPage = ({ navigation }) => {
     <Button title="Delete" onPress={() => onDeletePressHandler(item._id)} />
   </View>
 </View> 
+
+ ) : (
+              <View>
+                 <Image source={{ uri: item.image }} style={styles.carImage} />
+                <Text>Brand: {item.brand}</Text>
+                <Text>Model: {item.model}</Text>
+                <Text>Mileage: {item.mileage}</Text>
+                <Text>Fuel Type: {item.fuelType}</Text>
+                <View style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.editButton} onPress={() => onEditPressHandler(index, item)}>
+          <Text style={styles.editButtonText}>Edit</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.deleteButton} onPress={() => onDeletePressHandler(item._id)}>
+          <Text style={styles.deleteButtonText}>Delete</Text>
+        </TouchableOpacity>
+      </View>
+              </View>
+            )}
+          </View>
+        )}
+        keyExtractor={item => item._id}
+        numColumns={1}
+      />
+    </View>
+  );
+}
+export default DisplayPage; 
