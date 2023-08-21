@@ -82,7 +82,7 @@ const DisplayPage = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}></View>
-      <Text style={styles.titleText}>Annonser</Text>
+      <Text style={styles.titleText}>Annonse</Text>
       <TouchableOpacity style={styles.addButton} onPress={() => navigation.navigate('AddNew')}>
         <Text style={styles.addButtonText}>Lägg till</Text>
       </TouchableOpacity>
