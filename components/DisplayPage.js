@@ -60,3 +60,34 @@ const DisplayPage = ({ navigation }) => {
       console.error('Error updating car data:', error);
     }
   };
+
+  const onDeletePressHandler = async (carId) => {
+    try {
+      const response = await fetch(`http://localhost:3000/cars/${carId}`, {
+        method: 'DELETE',
+      });
+
+      if (response.ok) {
+      
+        const newData = data.filter(item => item._id !== carId);
+        setData(newData);
+      } else {
+        console.error('Error deleting car data');
+      }
+    } catch (error) {
+      console.error('Error deleting car data:', error);
+    }
+  }};
+
+  return (
+    <View style={styles.container}>
+      <View style={styles.header}></View>
+      <Text style={styles.titleText}>Annonser</Text>
+      <TouchableOpacity style={styles.addButton} onPress={() => navigation.navigate('AddNew')}>
+        <Text style={styles.addButtonText}>Lägg till</Text>
+      </TouchableOpacity>
+      <FlatList
+ key={isDataSaved ? 'dataSaved' : 'dataNotSaved'}
+ data={data}
+
+  renderItem={({ item, index }) => (  
