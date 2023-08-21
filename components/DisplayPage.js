@@ -91,3 +91,38 @@ const DisplayPage = ({ navigation }) => {
  data={data}
 
   renderItem={({ item, index }) => (  
+    <View style={[styles.item, editingIndex === index && styles.editingContainer]}>
+      {editingIndex === index ? (
+      <View>
+  <Image source={{ uri: editedCar.image }} style={styles.carImage} />
+  <TextInput
+    style={styles.editingTextInput}
+    placeholder="Image URL"
+    value={editedCar.image}
+    onChangeText={text => setEditedCar({ ...editedCar, image: text })}
+  />
+  <TextInput
+    style={styles.editingTextInput}
+    value={editedCar.brand}
+    onChangeText={text => setEditedCar({ ...editedCar, brand: text })}
+  />
+  <TextInput
+    style={styles.editingTextInput}
+    value={editedCar.model}
+    onChangeText={text => setEditedCar({ ...editedCar, model: text })}
+  />
+  <TextInput
+    style={styles.editingTextInput}
+    value={editedCar.mileage}
+    onChangeText={text => setEditedCar({ ...editedCar, mileage: text })}
+  />
+  <TextInput
+    style={styles.editingTextInput}
+    value={editedCar.fuelType}
+    onChangeText={text => setEditedCar({ ...editedCar, fuelType: text })}
+  />
+  <View style={styles.editingButtonsContainer}>
+    <Button title="Save" onPress={() => onSavePressHandler(index)} />
+    <Button title="Delete" onPress={() => onDeletePressHandler(item._id)} />
+  </View>
+</View> 
