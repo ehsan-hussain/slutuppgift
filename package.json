@@ -1,32 +1,25 @@
 {
   "name": "slutuppgift",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ehsan-hussain/slutuppgift.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ehsan-hussain/slutuppgift/issues"
-  },
-  "homepage": "https://github.com/ehsan-hussain/slutuppgift#readme",
   "dependencies": {
+    "@react-navigation/native": "^6.1.7",
     "@react-navigation/stack": "^6.3.17",
-    "bar": "^0.1.2",
-    "expo": "^49.0.7",
-    "expo-status-bar": "^1.6.0",
-    "react": "^18.2.0",
-    "react-native": "^0.72.4",
-    "react-native-document-picker": "^9.0.1",
-    "react-native-image-crop-picker": "^0.40.0",
-    "react-native-image-picker": "^5.6.1",
-    "status": "^0.0.13"
+    "expo": "~49.0.7",
+    "expo-status-bar": "~1.6.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-native": "0.72.3",
+    "react-native-web": "~0.19.6"
   },
-  "description": ""
+  "devDependencies": {
+    "@babel/core": "^7.20.0"
+  },
+  "private": true
 }

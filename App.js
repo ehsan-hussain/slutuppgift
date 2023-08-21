@@ -1,25 +1,14 @@
-import React from 'react';
-import { View, FlatList, Text, Button, TextInput, Image, StyleSheet } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import DisplayPage from './components/DisplayPage';
-import AddNew from './components/AddNew'
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
 
-const Stack = createStackNavigator();
-
-const App = () => {
+export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="DisplayPage">
-        <Stack.Screen name="Fordon" component={DisplayPage} />
-        <Stack.Screen name="AddNew" component={AddNew} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <View style={styles.container}>
+      <Text>Open up App.js to start working on your app!</Text>
+      <StatusBar style="auto" />
+    </View>
   );
-};
-
-export default App;
-
+}
 
 const styles = StyleSheet.create({
   container: {
